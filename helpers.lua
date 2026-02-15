@@ -72,6 +72,10 @@ this.is_mac = function()
     return mp.get_property('options/macos-force-dedicated-gpu') ~= nil
 end
 
+this.is_kde = function()
+    return os.getenv('XDG_CURRENT_DESKTOP') == 'KDE'
+end
+
 local function map(tab, func)
     local t = {}
     for k, v in pairs(tab) do
